@@ -1,9 +1,17 @@
-library(shiny)
-library(RCurl)
-library(jsonlite)
-library(tidyr)
-library(dplyr)
-library(httr)
+# Written by Dr. Deepu Palal, free to use and distribute with citation
+
+install_and_load <- function(pkg) {
+  if (!require(pkg, character.only = TRUE)) {
+    install.packages(pkg, dependencies = TRUE)
+    library(pkg, character.only = TRUE)
+  }
+}
+
+# List of required packages
+packages <- c("shiny", "RCurl", "jsonlite", "tidyr", "dplyr", "httr")
+
+sapply(packages, install_and_load)
+options(nwarnings = 10000)
 
 ui <- fluidPage(
   tabsetPanel(
