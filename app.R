@@ -48,18 +48,17 @@ ui <- fluidPage(
         ),
 
         mainPanel(
-          h3("Family Details"),
-          DT::dataTableOutput("family_table"),
-          h3("Member Details"),
-          DT::dataTableOutput("individual_table")
+          DT::dataTableOutput("summary_student_table")
         )
     )
     
   ),
   tabPanel("Summary",
            titlePanel("FAP Batch 2024-25 Summary of Data Entry"),
-           h3("Summary"),
-           DT::dataTableOutput("summary_student_table")
+           h3("Family Details"),
+            DT::dataTableOutput("family_table"),
+            h3("Member Details"),
+            DT::dataTableOutput("individual_table")
            )
 )
 )
